@@ -1,0 +1,44 @@
+header {
+  background-color: #ef5350;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+
+  img {
+    margin-left: 50px;
+    height: 50px;
+    width: 150px;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+
+      li a {
+        padding: 24px;
+
+        &:hover {
+          background: #e78482;
+        }
+      }
+    }
+
+    .search-input {
+      font-size: 16px;
+      padding: 2px 5px 2px 20px;
+      width: 270px;
+      border-radius: 50px;
+      border: none;
+      outline: none !important;
+    }
+  }
+}
