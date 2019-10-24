@@ -5,11 +5,13 @@
     type="text"
     placeholder="Enter Pokemon name"/>
     <ul>
-      <li><a style="cursor: pointer;">Link 1</a></li>
-      <li><a style="cursor: pointer;">Link 2</a></li>
-      <li><a style="cursor: pointer;">Link 3</a></li>
+      <li><a routerLink="/" style="cursor: pointer;">Home</a></li>
+      <li><a routerLink="/poke-list" style="cursor: pointer;">Pokemons</a></li>
+      <li><a routerLink="/" style="cursor: pointer;">Link 3</a></li>
     </ul>
 </nav>
 </header>
 
-<router-outlet></router-outlet>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
