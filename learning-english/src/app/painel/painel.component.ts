@@ -31,6 +31,17 @@ export class PainelComponent implements OnInit {
   }
 
   verifyAnswer(): void {
-    console.log('Verificar resposta: ', this.answer);
+    if (this.roundPhrase.phrasePtBr === this.answer) {
+      alert('A tradução está correta');
+
+      // change round question
+      this.round++;
+
+      // att roundPhrase object
+      this.roundPhrase = this.phrases[this.round];
+    } else {
+      alert('A tradução está incorreta');
+    }
+
   }
 }
