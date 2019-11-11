@@ -12,7 +12,7 @@ export class PainelComponent implements OnInit {
 
   phrases: Phrase[] = PHRASES;
   instruction = 'Traduza a frase:';
-  answer: string;
+  answer: string = '';
 
   round = 0;
   roundPhrase: Phrase;
@@ -20,8 +20,7 @@ export class PainelComponent implements OnInit {
   progress: number = 0;
 
   constructor() {
-    this.roundPhrase = this.phrases[this.round];
-    console.log(this.roundPhrase);
+    this.attRound();
   }
 
   ngOnInit() {
@@ -43,10 +42,18 @@ export class PainelComponent implements OnInit {
       this.progress = this.progress + (100 / this.phrases.length);
 
       // att roundPhrase object
-      this.roundPhrase = this.phrases[this.round];
+      this.attRound();
+
     } else {
       alert('A tradução está incorreta');
     }
+  }
 
+  attRound(): void {
+    // define a round phrase with base in some logic
+    this.roundPhrase = this.phrases[this.round];
+
+    // clear user answer
+    this.answer = '';
   }
 }
