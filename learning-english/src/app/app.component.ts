@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'learning-english';
+
+  finishGame(type: string): void {
+    console.log(type);
+  }
 }
