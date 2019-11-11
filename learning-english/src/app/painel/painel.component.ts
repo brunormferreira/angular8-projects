@@ -19,6 +19,8 @@ export class PainelComponent implements OnInit {
 
   progress: number = 0;
 
+  attempts: number = 3;
+
   constructor() {
     this.attRound();
   }
@@ -46,6 +48,13 @@ export class PainelComponent implements OnInit {
 
     } else {
       alert('A tradução está incorreta');
+
+      // decrement variable attempts
+      this.attempts--;
+
+      if (this.attempts === -1) {
+        alert('Você perdeu todas as tentativas!');
+      }
     }
   }
 
