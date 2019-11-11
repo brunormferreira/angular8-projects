@@ -35,13 +35,17 @@ export class PainelComponent implements OnInit {
 
   verifyAnswer(): void {
     if (this.roundPhrase.phrasePtBr === this.answer) {
-      alert('A tradução está correta');
 
       // change round question
       this.round++;
 
       // progress
       this.progress = this.progress + (100 / this.phrases.length);
+
+      //
+      if (this.round === 4) {
+        alert('Traduções concluidas com sucesso!');
+      }
 
       // att roundPhrase object
       this.attRound();
