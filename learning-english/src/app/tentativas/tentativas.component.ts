@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Heart } from '../shared/heart.model';
 @Component({
@@ -8,8 +8,7 @@ import { Heart } from '../shared/heart.model';
 })
 export class TentativasComponent implements OnInit {
 
-  emptyHeart: string = '../../assets/coracao_vazio.png';
-  fullHeart: string = '../../assets/coracao_cheio.png';
+  @Input() attempts: number;
 
   hearts: Heart[] = [
     new Heart(true),
@@ -22,6 +21,7 @@ export class TentativasComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('Tentativas recebidas no painel: ' + this.attempts);
   }
 
 }
