@@ -17,6 +17,8 @@ export class PainelComponent implements OnInit {
   round = 0;
   roundPhrase: Phrase;
 
+  progress: number = 0;
+
   constructor() {
     this.roundPhrase = this.phrases[this.round];
     console.log(this.roundPhrase);
@@ -36,6 +38,9 @@ export class PainelComponent implements OnInit {
 
       // change round question
       this.round++;
+
+      // progress
+      this.progress = this.progress + (100 / this.phrases.length);
 
       // att roundPhrase object
       this.roundPhrase = this.phrases[this.round];
