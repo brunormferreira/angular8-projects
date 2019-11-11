@@ -1,3 +1,5 @@
+<!-- <img [src]="emptyHeart" />
 <img [src]="emptyHeart" />
-<img [src]="fullHeart" />
-<img [src]="fullHeart" />
+<img [src]="emptyHeart" /> -->
+
+<img *ngFor="let heart of hearts" [src]="heart.showHeart()" />
