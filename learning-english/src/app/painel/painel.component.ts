@@ -22,6 +22,7 @@ export class PainelComponent implements OnInit {
   attempts: number = 3;
 
   @Output() finishGame: EventEmitter<string> = new EventEmitter();
+
   constructor() {
     this.attRound();
   }
@@ -52,7 +53,6 @@ export class PainelComponent implements OnInit {
       this.attRound();
 
     } else {
-      alert('A tradução está incorreta');
 
       // decrement variable attempts
       this.attempts--;

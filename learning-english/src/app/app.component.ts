@@ -6,9 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'learning-english';
+
+  gameInProgress: boolean = true;
+  finishType: string;
 
   finishGame(type: string): void {
-    console.log(type);
+    this.gameInProgress = false;
+    this.finishType = type;
   }
 }
