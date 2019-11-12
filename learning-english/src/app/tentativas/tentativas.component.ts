@@ -17,7 +17,6 @@ export class TentativasComponent implements OnInit, OnChanges {
   ];
 
   constructor() {
-    console.log(this.hearts);
   }
 
   ngOnChanges() {
@@ -28,7 +27,6 @@ export class TentativasComponent implements OnInit, OnChanges {
 
       this.hearts[index - 1].full = false;
     }
-    console.log('Tentativas recebidas no painel: ' + this.attempts);
   }
 
   ngOnInit() {
