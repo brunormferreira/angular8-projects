@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { OfertasService } from '../ofertas.service';
-import { Oferta } from '../shared/oferta.model';
+import { OfertasService } from '../ofertas.service'
+import { Oferta } from '../shared/oferta.model'
 
 @Component({
   selector: 'app-home',
@@ -11,18 +10,24 @@ import { Oferta } from '../shared/oferta.model';
 })
 export class HomeComponent implements OnInit {
 
-  ofertas: Oferta[];
+  public ofertas: Oferta[]
 
   constructor(private ofertasService: OfertasService) { }
 
   ngOnInit() {
-    // this.ofertas = this.ofertasService.getOfertas();
-    // console.log(this.ofertas);
+    //this.ofertas = this.ofertasService.getOfertas()
+    //console.log(this.ofertas)
 
     this.ofertasService.getOfertas2()
-      .then(( ofertas: Oferta[] ) => {
-        this.ofertas = ofertas;
-    });
+      .then(( ofertas: Oferta[] ) => { 
+        console.log('a função resolve() foi resolvida depois de 3 segundos')
+        this.ofertas = ofertas 
+      
+      })
+      .catch(( param: any ) => { 
+        console.log(param) 
+      
+      })
   }
 
 }
