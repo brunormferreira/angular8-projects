@@ -1,4 +1,4 @@
-import { Oferta } from './shared/oferta.model'
+import { Oferta } from './shared/oferta.model';
 
 export class OfertasService {
 
@@ -51,39 +51,39 @@ export class OfertasService {
       ]
     }
   ];
-  
+
   public getOfertas(): Array<Oferta> {
     return this.ofertas;
   }
 
   public getOfertas2(): Promise<Oferta[]> {
     return new Promise((resolve, reject) => {
-      //algum tipo de processamento, que ao finalizar, chama a função resolve ou a função reject
-      //console.log('será que passou por aqui?')
-      let deu_certo = true;
-      
-      if(deu_certo) {
-        setTimeout(() => resolve( this.ofertas ), 3000)
-          
+      // algum tipo de processamento, que ao finalizar, chama a função resolve ou a função reject
+      // console.log('será que passou por aqui?')
+      const deuCerto = true;
+
+      if (deuCerto) {
+        setTimeout(() => resolve( this.ofertas ), 3000);
+
       } else {
-        reject({ codigo_erro: 404, mensagem_erro: 'Servidor não encontrado XYZ' })
+        reject({ codigo_erro: 404, mensagem_erro: 'Servidor não encontrado XYZ' });
       }
     })
     .then(( ofertas: Oferta[]) => {
-      //fazer alguma tratativa
-      console.log('primeiro then')
-      return ofertas
+      // fazer alguma tratativa
+      console.log('primeiro then');
+      return ofertas;
     })
     .then(( ofertas: Oferta[]) => {
-      //fazer uma outra tratativa
-      console.log('segundo then')
+      // fazer uma outra tratativa
+      console.log('segundo then');
       return new Promise((resolve2, reject2) => {
-        setTimeout(() => { resolve2( ofertas ) },3000)
-      })
+        setTimeout(() => { resolve2( ofertas ); }, 3000);
+      });
     })
     .then(( ofertas: Oferta[] ) => {
-      console.log('terceiro then executado após 3 segundos porque estava aguardando uma promisse ser resolvida')
-      return ofertas
-    })
+      console.log('terceiro then executado após 3 segundos porque estava aguardando uma promisse ser resolvida');
+      return ofertas;
+    });
   }
 }
