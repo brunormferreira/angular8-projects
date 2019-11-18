@@ -20,7 +20,7 @@ export class OfertaComponent implements OnInit {
     // this.route.params.subscribe((parametro: any) => { console.log(parametro.id); });
     this.ofertasService.getOfertaPorId(this.route.snapshot.params.id)
       .then((oferta: Oferta) => {
-        // console.log(oferta);
+        console.log(oferta);
         this.oferta = oferta;
       });
   }
